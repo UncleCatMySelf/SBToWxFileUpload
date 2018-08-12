@@ -1,0 +1,34 @@
+<view class="container">
+  <view class="icon-box">
+    <image src='/imgs/fault/Get_numbered.png' class="fault-icon" catchtap='scanCodeTap'></image>
+  </view> 
+  <view class="upload">
+    <image src='/imgs/fault/Add.png' class="upload_icon"  catchtap='uploadFileTap'></image>
+  </view> 
+  <view>
+  <image class="imgUpload" wx:for="{{avatarUrl}}" wx:key="unique" src="{{item}}" mode="aspecFill" /> 
+  </view>
+  <view class="checkBox">
+    <checkbox-group bindchange="checkboxChange">
+      <view class="check_box ">
+        <label class="checkbox" wx:for="{{items}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </view>
+      <view class="check_box check_box2">
+        <label class="checkbox " wx:for="{{item2}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </view>
+      <view class="check_box check_box2">
+        <label class="checkbox " wx:for="{{item3}}">
+          <checkbox value="{{item.value}}" checked="{{item.checked}}" />{{item.value}}
+        </label>
+      </view>
+    </checkbox-group>
+  </view>
+  <form bindsubmit="bindFormSubmit">
+    <textarea placeholder='问题描述' name="textarea" />
+    <button class="submit" form-type='submit'> 提交 </button>
+  </form>
+</view>
